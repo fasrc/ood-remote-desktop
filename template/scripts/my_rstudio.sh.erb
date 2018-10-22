@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+module load <%= context.rstudio_version %>
+module load <%= context.r_version %>
+<%- if !context.rlibs.blank? -%>
+export R_LIBS_USER=<%= context.rlibs %>:$R_LIBS_USER
+<%- end -%>
+rstudio &

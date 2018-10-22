@@ -1,0 +1,79 @@
+---
+title: "Odyssey Remote Desktop"
+cluster: "odyssey3"
+attributes:
+  desktop: "myxfce"
+  bc_vnc_idle: 0
+  node_type: null
+  bc_num_slots: null
+  bc_vnc_resolution:
+    required: true
+  bc_account:
+    help: "Only relevant if you have multiple slurm accounts. It can be left blank otherwise"
+  bc_num_hours:
+    value: 4
+  bc_queue:
+    value: "general"
+    help: "currently only available for the partition general" 
+  custom_email_address:
+    label: email for status notification
+    widget: text_field
+  custom_memory_per_node:
+    label: Memory per node
+    value: 4000
+    widget: text_field
+  custom_num_cores:
+    label: Number of cores
+    value: 2
+    help: "Number of Cpus to allocate"
+  custom_reservation:
+    label: Reservation
+    widget: text_field
+  custom_desktop:
+    label: "check this if you want to create a desktop folder just for this job"
+    widget: check_box
+  matlab_version:
+    widget: select
+    label: "MATLAB version to display as icon on desktop"
+    help: "This defines the version of MATLAB you want to load."
+    options:
+      - [ "none", "NULL" ]
+      - [ "R2018a", "matlab/R2018a-fasrc01" ]
+      - [ "R2017a", "matlab/R2017a-fasrc02" ]
+  r_version:
+    widget: select
+    label: "R version to be loaded with Rstudio"
+    help: "This defines the version of R you want to load."
+    options:
+      - [ "3.5.1", "R/3.5.1-fasrc01" ]
+      - [ "3.4.2", "R/3.4.2-fasrc01" ]
+  rlibs:
+    label: location of your R_LIBS_USER folder
+    widget: text_field
+  rstudio_version:
+    widget: select
+    label: "Rstudio version to display as icon on desktop"
+    help: "This defines the version of Rstudio you want to load."
+    options:
+      - [ "none", "NULL" ]
+      - [ "1.1.453-fasrc01", "rstudio/1.1.453-fasrc01" ]
+
+form:
+  - bc_vnc_idle
+  - desktop
+  - bc_vnc_resolution
+  - bc_num_slots
+  - node_type
+  - bc_queue
+  - custom_memory_per_node
+  - custom_num_cores
+  - bc_num_hours
+  - custom_desktop
+  - matlab_version
+  - rstudio_version
+  - r_version
+  - rlibs
+  - custom_reservation
+  - bc_email_on_started
+  - custom_email_address
+  - bc_account

@@ -1,0 +1,9 @@
+---
+name: OdysseyRD
+icon: fa://desktop
+category: Interactive Apps
+subcategory: Desktops
+role: batch_connect
+description: |
+  This app will launch an interactive desktop session on a compute node. You can optionally select to display on the desktop some of your preferred GUI applications.
+
