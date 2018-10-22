@@ -32,6 +32,7 @@ attributes:
   custom_desktop:
     label: "Custom Desktop Folder"
     widget: check_box
+    value: 1
     help: |
           **_Checking this box will create a desktop folder unique to this job_**
   matlab_version:
