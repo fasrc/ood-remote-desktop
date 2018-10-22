@@ -30,8 +30,10 @@ attributes:
     label: Reservation
     widget: text_field
   custom_desktop:
-    label: "check this if you want to create a desktop folder just for this job"
+    label: "Custom Desktop Folder"
     widget: check_box
+    help: |
+          **_Checking this box will create a desktop folder unique to this job_**
   matlab_version:
     widget: select
     label: "MATLAB version to display as icon on desktop"
@@ -74,6 +76,6 @@ form:
   - r_version
   - rlibs
   - custom_reservation
-  - bc_email_on_started
   - custom_email_address
+  - bc_email_on_started
   - bc_account
