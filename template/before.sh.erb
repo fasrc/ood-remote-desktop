@@ -43,10 +43,10 @@ XDG_TEMPLATES_DIR="$HOME/Templates"
 XDG_VIDEOS_DIR="$HOME/Videos"
 EOF
 
-## configure the panel so not to display removable folders
-export PANEL_CONFIG=$XDG_CONFIG_DIRS/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
-mkdir -p "$(dirname "${PANEL_CONFIG}")"
-cat > $PANEL_CONFIG <<EOF
+## configure the desktop so not to display removable folders
+export DESKTOP_CONFIG=$XDG_CONFIG_DIRS/xfce4/xfconf/xfce-perchannel-xml/xfce4-desktop.xml
+mkdir -p "$(dirname "${DESKTOP_CONFIG}")"
+cat > $DESKTOP_CONFIG <<EOF
 <?xml version="1.0" encoding="UTF-8"?>
 <channel name="xfce4-desktop" version="1.0">
   <property name="backdrop" type="empty">
@@ -78,6 +78,80 @@ cat > $PANEL_CONFIG <<EOF
   <property name="desktop-icons" type="empty">
     <property name="file-icons" type="empty">
       <property name="show-removable" type="bool" value="false"/>
+    </property>
+  </property>
+</channel>
+EOF
+
+
+## configure the panel so not to display removable folders
+export PANEL_CONFIG=$XDG_CONFIG_DIRS/xfce4/xfconf/xfce-perchannel-xml/xfce4-panel.xml
+mkdir -p "$(dirname "${PANEL_CONFIG}")"
+cat > $PANEL_CONFIG <<EOF
+<?xml version="1.0" encoding="UTF-8"?>
+<channel name="xfce4-panel" version="1.0">
+  <property name="configver" type="int" value="2"/>
+  <property name="panels" type="array">
+    <value type="int" value="1"/>
+    <value type="int" value="2"/>
+    <property name="panel-1" type="empty">
+      <property name="position" type="string" value="p=6;x=0;y=0"/>
+      <property name="length" type="uint" value="100"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="size" type="uint" value="30"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="1"/>
+        <value type="int" value="3"/>
+        <value type="int" value="15"/>
+        <value type="int" value="4"/>
+        <value type="int" value="5"/>
+        <value type="int" value="6"/>
+      </property>
+    </property>
+    <property name="panel-2" type="empty">
+      <property name="position" type="string" value="p=10;x=0;y=0"/>
+      <property name="position-locked" type="bool" value="true"/>
+      <property name="plugin-ids" type="array">
+        <value type="int" value="7"/>
+        <value type="int" value="8"/>
+        <value type="int" value="9"/>
+        <value type="int" value="10"/>
+        <value type="int" value="12"/>
+        <value type="int" value="13"/>
+        <value type="int" value="14"/>
+      </property>
+    </property>
+  </property>
+  <property name="plugins" type="empty">
+    <property name="plugin-1" type="string" value="applicationsmenu"/>
+    <property name="plugin-3" type="string" value="tasklist"/>
+    <property name="plugin-15" type="string" value="separator">
+      <property name="expand" type="bool" value="true"/>
+      <property name="style" type="uint" value="0"/>
+    </property>
+    <property name="plugin-4" type="string" value="pager"/>
+    <property name="plugin-5" type="string" value="clock"/>
+    <property name="plugin-6" type="string" value="systray"/>
+    <property name="plugin-7" type="string" value="showdesktop"/>
+    <property name="plugin-8" type="string" value="separator"/>
+    <property name="plugin-9" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15403481811.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-10" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15403481812.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-12" type="string" value="launcher">
+      <property name="items" type="array">
+        <value type="string" value="15403481824.desktop"/>
+      </property>
+    </property>
+    <property name="plugin-13" type="string" value="separator"/>
+    <property name="plugin-14" type="string" value="directorymenu">
+      <property name="base-directory" type="string" value="$HOME"/>
     </property>
   </property>
 </channel>
