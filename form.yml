@@ -11,20 +11,28 @@ attributes:
   bc_account:
     help: "Only relevant if you have multiple slurm accounts. It can be left blank otherwise"
   bc_num_hours:
-    value: 4
-  bc_queue:
-    value: "remotedesktop"
-    help: "currently only available for the dedicated remotedesktop partition"
+    value:  6
+    min:    4
+    step:   2
+    max:    12
+  bc_queue: "remotedesktop"
   custom_email_address:
     label: email for status notification
     widget: text_field
   custom_memory_per_node:
-    label: Memory per node
-    value: 4000
-    widget: text_field
+    label: Memory Allocation in GB
+    value: 4
+    min:   4
+    step:  1
+    max:   16
+    widget: number_field
   custom_num_cores:
     label: Number of cores
-    value: 2
+    value: 1
+    min:   1
+    step:  1
+    max:   8
+    widget: number_field
     help: "Number of Cpus to allocate"
   custom_reservation:
     label: Reservation
@@ -76,7 +84,7 @@ form:
   - rstudio_version
   - r_version
   - rlibs
-  - custom_reservation
   - custom_email_address
   - bc_email_on_started
+  - custom_reservation
   - bc_account

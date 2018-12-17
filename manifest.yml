@@ -5,5 +5,11 @@ category: Interactive Apps
 subcategory: Desktops
 role: batch_connect
 description: |
-  This app will launch an interactive desktop session on a compute node. You can optionally select to display on the desktop some of your preferred GUI applications.
+  This form will launch an interactive desktop session on a compute node in the remote_desktop partition. 
+
+  You can select the amount of RAM (in GB), number of cores, and Timelimit (in hrs).
+
+  Upon request you can receive email notification when the job starts. You must specify your email address.
+
+  You can optionally select to display on the desktop some of your preferred GUI applications.
 
