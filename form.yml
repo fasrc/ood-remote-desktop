@@ -10,11 +10,11 @@ attributes:
     required: true
   bc_account:
     help: "Only relevant if you have multiple slurm accounts. It can be left blank otherwise"
-  bc_num_hours:
-    value:  6
-    min:    4
-    step:   2
-    max:    12
+  custom_time:
+    label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM). Maximum for this partition is 7 days"
+    value: "04:00:00"
+    widget: text_field
+  bc_num_hours: null
   bc_queue: "remotedesktop"
   custom_email_address:
     label: email for status notification
@@ -100,6 +100,7 @@ form:
   - custom_memory_per_node
   - custom_num_cores
   - bc_num_hours
+  - custom_time
   - custom_desktop
   - matlab_version
   - rstudio_version
