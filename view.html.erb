@@ -2,9 +2,10 @@
    <i class="fa fa-eye"></i>Launch noVNC web Client
 </a>
 
-<a  class="btn btn-default pull-right" target="_blank" href="vnc://:<%= password %>@<%= host %>:<%= port %>">
-   <i class="fa fa-eye"></i>Launch VNC Client
+<a  class="btn btn-default pull-right" target="_blank" href="/turbovnc_connection_<%= connect.id  %>.vnc">
+   <i class="fa fa-eye"></i>Link to the vnc file still missing
 </a>
+
 
 <a  class="btn btn-default pull-right" target="_blank" href="/pun/sys/dashboard/noVNC-1.0.0/vnc.html?autoconnect=true&password=<%= spassword %>&path=rnode/<%= host %>/<%= websocket %>/websockify&resize=downscale">
    <i class="fa fa-eye"></i>View Only (Share-able Link)
