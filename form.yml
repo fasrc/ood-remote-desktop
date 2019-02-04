@@ -1,5 +1,5 @@
 ---
-title: "Odyssey Remote Desktop Dev"
+title: "Odyssey Remote Desktop"
 cluster: "odyssey3"
 attributes:
   desktop: "myxfce"
