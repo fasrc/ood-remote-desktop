@@ -15,7 +15,8 @@ attributes:
     value: "04:00:00"
     widget: text_field
   bc_num_hours: null
-  bc_queue: "remotedesktop"
+  bc_queue: 
+    value: "remotedesktop"
   custom_email_address:
     label: email for status notification
     widget: text_field

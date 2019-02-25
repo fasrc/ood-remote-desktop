@@ -1,3 +1,4 @@
+#!/bin/bash -l
 # Remove any preconfigured monitors
 if [[ -f "$XDG_CONFIG_HOME/monitors.xml" ]]; then
   mv "$XDG_CONFIG_HOME/monitors.xml" "$XDG_CONFIG_HOME/monitors.xml.bak"
