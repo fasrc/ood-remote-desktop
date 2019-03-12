@@ -90,6 +90,13 @@ attributes:
     options:
       - [ "none", "NULL" ]
       - [ "1.1.453-fasrc01", "rstudio/1.1.453-fasrc01" ]
+  centos_version:
+    widget: select
+    label: "centos version"
+    help: "Please select centos6 ONLY if you have software that has demonstrated issues of running in centos7. Centos7 should be used in the vast majority of the times"
+    options:
+      - [ "centos7",  "/n/helmod/apps/centos7/Singularity/xfce/xfce-el7-7.4.1708.img" ]
+      - [ "centos6",  "/n/helmod/apps/centos7/Singularity/xfce-centos6/xfce-el6fasrc.img" ]
 
 form:
   - bc_vnc_idle
@@ -102,6 +109,7 @@ form:
   - custom_num_cores
   - bc_num_hours
   - custom_time
+  - centos_version
   - custom_desktop
   - matlab_version
   - rstudio_version
