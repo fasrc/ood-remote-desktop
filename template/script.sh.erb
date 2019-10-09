@@ -10,21 +10,29 @@ module purge && module restore
 
 export SINGULARITYENV_XDG_CONFIG_HOME=$XDG_CONFIG_HOME
 
-containerimg=<%= context.centos_version %>
-containercommand="singularity exec "
+container_image=<%= context.centos_version %>
+
+export SING_BINDS=" -B /etc/nsswitch.conf -B /etc/sssd/ -B /var/lib/sss -B /etc/slurm -B /slurm -B /var/run/munge  -B `which sbatch ` -B `which srun ` -B `which sacct ` -B `which scontrol `   -B /usr/lib64/slurm/  -B /usr/lib64/libmunge.so.2 -B /usr/lib64/libmunge.so.2.0.0 "
+
+
 
 <%- if context.centos_version == "/n/helmod/apps/centos7/Singularity/xfce-centos6/xfce-el6fasrc.img" -%>
 
 dbus-uuidgen > mymachid
-containercommand="singularity exec -B ./mymachid:/var/lib/dbus/machine-id " 
+SING_BINDS="$SING_BINDS  -B ./mymachid:/var/lib/dbus/machine-id " 
 
 <%- end -%>
 
+export SING_GPU=""
+
+<%- if !context.custom_num_gpus.to_i.zero? -%>
+export SING_GPU="--nv"
+<%- end -%>
 
 # Start up desktop
 echo "Launching desktop '<%= context.desktop %>'..."
 chmod +x "<%= session.staged_root.join("desktops", "#{context.desktop}.sh") %>"
 #singularity exec -B ./mymachid:/var/lib/dbus/machine-id  $containerimg "<%= session.staged_root.join("desktops", "#{context.desktop}.sh") %>"
 #singularity exec  $containerimg "<%= session.staged_root.join("desktops", "#{context.desktop}.sh") %>"
-$containercommand  $containerimg "<%= session.staged_root.join("desktops", "#{context.desktop}.sh") %>"
+singularity exec $SING_GPU $SING_BINDS $container_image "<%= session.staged_root.join("desktops", "#{context.desktop}.sh") %>"
 echo "Desktop '<%= context.desktop %>' ended..."

@@ -350,53 +350,5 @@ mkdir -p $DESKTOP_FOLDER
 <%- end -%>
 
 
-module purge
-
-<%- if !context.matlab_version.include?("NULL") -%>
-## create icon for Matlab (if selected)
-#
-
-matlab_ver=$(echo <%=context.matlab_version %> | sed 's/.*\/\(.*\)-fasrc.*/\1/' )
-export matlab_icon=<%= session.staged_root.join("assets", "matlab.png") %>
-export matlab_script=<%= session.staged_root.join("scripts", "my_matlab.sh") %>
-
-cat > $DESKTOP_FOLDER/Matlab.desktop <<EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Exec=$matlab_script
-Icon=$matlab_icon
-Terminal=false
-Name=Matlab_$matlab_ver
-Comment=Startup Matlab version $matlab_ver
-EOF
-
-chmod +x $DESKTOP_FOLDER/Matlab.desktop
-
-<%- end -%>
-
-<%- if !context.rstudio_version.include?("NULL") -%>
-## create icon for Rstudio (if selected)
-#
-
-r_ver=$(echo <%=context.r_version %> | sed 's/.*\/\(.*\)-fasrc.*/\1/' )
-export rstudio_icon=<%= session.staged_root.join("assets", "rstudio.png") %>
-export rstudio_script=<%= session.staged_root.join("scripts", "my_rstudio.sh") %>
-
-cat > $DESKTOP_FOLDER/Rstudio.desktop <<EOF
-[Desktop Entry]
-Version=1.0
-Type=Application
-Exec=$rstudio_script
-Icon=$rstudio_icon
-Terminal=false
-Name=Rstudio and R $r_ver
-Comment=Startup Rstudio and R version $r_ver 
-EOF
-
-chmod +x $DESKTOP_FOLDER/Rstudio.desktop
-
-<%- end -%>
-
 
 
