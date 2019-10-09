@@ -1,5 +1,5 @@
 ---
-title: "Conteinerized Remote Desktop"
+title: "Conteinerized FAS-RC Remote Desktop"
 cluster: "odyssey3"
 attributes:
   desktop: "myxfce"
