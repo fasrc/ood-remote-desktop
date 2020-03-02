@@ -16,7 +16,7 @@ export SING_BINDS=" -B /etc/nsswitch.conf -B /etc/sssd/ -B /var/lib/sss -B /etc/
 
 
 
-<%- if context.centos_version == "/n/helmod/apps/centos7/Singularity/xfce-centos6/xfce-el6fasrc.img" -%>
+<%- if context.centos_version == "/n/singularity_images/OOD/OdysseyRD/current/xfce-el6fasrc.img" -%>
 
 dbus-uuidgen > mymachid
 SING_BINDS="$SING_BINDS  -B ./mymachid:/var/lib/dbus/machine-id " 

@@ -7,6 +7,7 @@ attributes:
   node_type: null
   bc_num_slots: null
   bc_vnc_resolution:
+    value: "1024x768"
     required: true
   bc_account:
     help: "Only relevant if you have multiple slurm accounts. It can be left blank otherwise"
@@ -57,8 +58,8 @@ attributes:
     label: "centos version"
     help: "Please select centos6 ONLY if you have software that has demonstrated issues of running in centos7. Centos7 should be used in the vast majority of the times"
     options:
-      - [ "centos7",  "/n/helmod/apps/centos7/Singularity/xfce/xfce-el7-7.4.1708.img" ]
-      - [ "centos6",  "/n/helmod/apps/centos7/Singularity/xfce-centos6/xfce-el6fasrc.img" ]
+      - [ "centos7",  "/n/singularity_images/OOD/OdysseyRD/current/xfce-el7-7.4.1708.img" ]
+      - [ "centos6",  "/n/singularity_images/OOD/OdysseyRD/current/xfce-el6fasrc.img" ]
 
 form:
   - bc_vnc_idle
