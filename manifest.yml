@@ -11,5 +11,5 @@ description: |
 
   Upon request you can receive email notification when the job starts. You must specify your email address.
 
-  IMPORTANT: Please note that it would not be possible to run singularity inside this application. If you need to run singularity please select the regular non containerized remote desktop application.
+  IMPORTANT: Please note that it would not be possible to run singularity inside this application.
 
