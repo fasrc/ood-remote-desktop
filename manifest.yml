@@ -5,9 +5,9 @@ category: Interactive Apps
 subcategory: Desktops
 role: batch_connect
 description: |
-  This form will launch an interactive desktop session as a container on a compute node on any partition.
+  This form will launch an interactive desktop session on a node on the Academic Cluster
 
-  You can select the amount of RAM (in GB), number of cores, Timelimit, number of GPUs (for certain partitions)
+  You can select the amount of RAM (in GB), number of cores, and Timelimit
 
   Upon request you can receive email notification when the job starts. You must specify your email address.
 

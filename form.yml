@@ -1,5 +1,5 @@
 ---
-title: "Containerized FAS-RC Remote Desktop"
+title: "Remote Desktop"
 cluster: "odyssey3"
 attributes:
   desktop: "myxfce"
@@ -26,7 +26,7 @@ attributes:
     value: 4
     min:   4
     step:  1
-    max:   512
+    max:   256
     widget: number_field
   custom_num_cores:
     label: Number of cores
@@ -36,14 +36,7 @@ attributes:
     max:   64
     widget: number_field
     help: "Number of Cpus to allocate"
-  custom_num_gpus:
-    label: Number of GPUs
-    value: 0
-    min:   0
-    step:  1
-    max:   8
-    widget: number_field
-    help: "Number of GPUs to allocate. Available only on GPU enabled partitions"
+  custom_num_gpus: 0
   custom_reservation:
     label: Reservation
     widget: text_field
@@ -56,10 +49,9 @@ attributes:
   centos_version:
     widget: select
     label: "centos version"
-    help: "Please select centos6 ONLY if you have software that has demonstrated issues of running in centos7. Centos7 should be used in the vast majority of the times"
+    help: "Centos7 is currently the only supported platform"
     options:
-      - [ "centos7",  "/n/singularity_images/OOD/OdysseyRD/current/xfce-el7-7.4.1708.img" ]
-      - [ "centos6",  "/n/singularity_images/OOD/OdysseyRD/current/xfce-el6fasrc.img" ]
+      - [ "centos7",  "/n/helmod/apps/centos7/Singularity/Xfce/current/xfce-el7-7.4.1708.img" ]
 
 form:
   - bc_vnc_idle
