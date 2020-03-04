@@ -27,6 +27,14 @@ attributes:
     step:  1
     max:   256
     widget: number_field
+  custom_num_tasks:
+    label: Number of mpi tasks
+    value: 1
+    min:   1
+    step:  1
+    max:   64
+    widget: number_field
+    help: "Number of mpi tasks. If you don't know what this means leave it at 1"
   custom_num_cores:
     label: Number of cores
     value: 1
@@ -34,7 +42,7 @@ attributes:
     step:  1
     max:   64
     widget: number_field
-    help: "Number of Cpus to allocate"
+    help: "Number of Cpus per task"
   custom_num_gpus: 0
   custom_reservation:
     label: Reservation
@@ -61,6 +69,7 @@ form:
   - bc_queue
   - custom_memory_per_node
   - custom_num_cores
+  - custom_num_tasks
   - custom_num_gpus
   - bc_num_hours
   - custom_time
