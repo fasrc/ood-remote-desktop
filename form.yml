@@ -1,6 +1,6 @@
 ---
 title: "Remote Desktop"
-cluster: "odyssey3"
+cluster: "academic"
 attributes:
   desktop: "myxfce"
   bc_vnc_idle: 0
