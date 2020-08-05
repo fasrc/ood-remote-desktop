@@ -14,15 +14,6 @@ container_image=<%= context.centos_version %>
 
 export SING_BINDS=" -B /etc/nsswitch.conf -B /etc/sssd/ -B /var/lib/sss -B /etc/slurm -B /slurm -B /var/run/munge  -B `which sbatch ` -B `which srun ` -B `which sacct ` -B `which scontrol `   -B /usr/lib64/slurm/  -B /usr/lib64/libmunge.so.2 -B /usr/lib64/libmunge.so.2.0.0 "
 
-
-
-<%- if context.centos_version == "/n/singularity_images/OOD/OdysseyRD/current/xfce-el6fasrc.img" -%>
-
-dbus-uuidgen > mymachid
-SING_BINDS="$SING_BINDS  -B ./mymachid:/var/lib/dbus/machine-id " 
-
-<%- end -%>
-
 export SING_GPU=""
 
 <%- if !context.custom_num_gpus.to_i.zero? -%>
