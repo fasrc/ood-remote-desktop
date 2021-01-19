@@ -58,7 +58,7 @@ attributes:
     label: "centos version"
     help: "Centos7 is currently the only supported platform"
     options:
-      - [ "centos7",  "/n/helmod/apps/centos7/Singularity/OOD_Apps_academic_cluster/Xfce/current/xfce-el7-7.4.1708.img" ]
+      - [ "centos7.8",  "/n/singularity_images/Academic-cluster/Tools/remote-desktop/remote_desktop_011821.sif" ]
 
 form:
   - bc_vnc_idle
