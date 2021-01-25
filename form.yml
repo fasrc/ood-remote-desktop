@@ -9,8 +9,7 @@ attributes:
   bc_vnc_resolution:
     value: "1024x768"
     required: true
-  bc_account:
-    help: "Only relevant if you have multiple slurm accounts. It can be left blank otherwise"
+  bc_account: null
   custom_time:
     label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM)."
     value: "04:00:00"
@@ -44,9 +43,7 @@ attributes:
     widget: number_field
     help: "Number of Cpus per task"
   custom_num_gpus: 0
-  custom_reservation:
-    label: Reservation
-    widget: text_field
+  custom_reservation: null
   custom_desktop:
     label: "Custom Desktop Folder"
     widget: check_box
