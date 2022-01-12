@@ -5,7 +5,7 @@ category: Interactive Apps
 subcategory: Desktops
 role: batch_connect
 description: |
-  This form will launch an interactive desktop session on a compute node in the remote_desktop partition. 
+  This form will launch an interactive desktop session on a compute node. 
 
   You can select the amount of RAM (in GB), number of cores, and Timelimit (in hrs).
 

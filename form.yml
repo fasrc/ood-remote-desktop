@@ -1,6 +1,6 @@
 ---
 title: "FAS-RC Remote Desktop"
-cluster: "odyssey3"
+cluster: "fasse"
 attributes:
   desktop: "myxfce"
   bc_vnc_idle: 0
@@ -16,7 +16,8 @@ attributes:
     value: "04:00:00"
     widget: text_field
   bc_num_hours: null
-  bc_queue: "remotedesktop"
+  bc_queue:
+    value: "test"
   custom_email_address:
     label: email for status notification
     widget: text_field
