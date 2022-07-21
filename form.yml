@@ -12,7 +12,7 @@ attributes:
   bc_account:
     help: "Only relevant if you have multiple slurm accounts. It can be left blank otherwise"
   custom_time:
-    label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM). Maximum for this partition is 28 days"
+    label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM)."
     value: "04:00:00"
     widget: text_field
   bc_num_hours: null
