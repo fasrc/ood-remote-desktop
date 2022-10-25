@@ -15,9 +15,15 @@ attributes:
     label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM)."
     value: "04:00:00"
     widget: text_field
+    help: |
+      *sbatch -t, --time=\<time\>*
   bc_num_hours: null
   bc_queue: 
     value: "test"
+    help: |
+      *sbatch -p, --partition=\<partition_names\>*
+
+      [Slurm partition](https://www.rc.fas.harvard.edu/resources/running-jobs/#Slurm_partitions) name (e.g., **shared** ), or comma-separated list of partition names (e.g., **shared,test** )
   custom_email_address:
     label: email for status notification
     widget: text_field
