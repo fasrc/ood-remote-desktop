@@ -42,6 +42,14 @@ attributes:
     max:   64
     widget: number_field
     help: "Number of Cpus to allocate"
+  custom_num_gpus:
+    label: Number of GPUs
+    value: 0
+    min:   0
+    step:  1
+    max:   8
+    widget: number_field
+    help: "Number of GPUs to allocate. Available only on GPU enabled partitions"
   custom_reservation:
     label: Reservation
     widget: text_field
@@ -61,6 +69,7 @@ form:
   - bc_queue
   - custom_memory_per_node
   - custom_num_cores
+  - custom_num_gpus
   - bc_num_hours
   - custom_time
   - custom_desktop
