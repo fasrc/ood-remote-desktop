@@ -47,7 +47,7 @@ attributes:
     value: 0
     min:   0
     step:  1
-    max:   8
+    max:   4
     widget: number_field
     help: "Number of GPUs to allocate. Available only on GPU enabled partitions"
   custom_reservation:
