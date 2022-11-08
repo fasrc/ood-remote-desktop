@@ -1,5 +1,5 @@
 ---
-title: "FAS-RC Remote Desktop"
+title: "Remote Desktop"
 cluster: "odyssey3"
 attributes:
   desktop: "myxfce"
@@ -15,9 +15,15 @@ attributes:
     label: "Allocated Time (expressed in MM , or HH:MM:SS , or DD-HH:MM)."
     value: "04:00:00"
     widget: text_field
+    help: |
+      *sbatch -t, --time=\<time\>*
   bc_num_hours: null
   bc_queue: 
     value: "test"
+    help: |
+      *sbatch -p, --partition=\<partition_names\>*
+
+      [Slurm partition](https://www.rc.fas.harvard.edu/resources/running-jobs/#Slurm_partitions) name (e.g., **shared** ), or comma-separated list of partition names (e.g., **shared,test** )
   custom_email_address:
     label: email for status notification
     widget: text_field
@@ -53,52 +59,6 @@ attributes:
     value: 1
     help: |
           **_Checking this box will create a desktop folder unique to this job_**
-  matlab_version:
-    widget: select
-    label: "MATLAB version to display as icon on desktop"
-    help: "This defines the version of MATLAB you want to load."
-    options:
-      - [ "none", "NULL" ]
-      - [ "R2018a", "matlab/R2018a-fasrc01" ]
-      - [ "R2017a", "matlab/R2017a-fasrc02" ]
-  r_version:
-    widget: select
-    label: "R version to be loaded with Rstudio"
-    help: "This defines the version of R you want to load."
-    options:
-      - [ "R/3.3.3-fasrc01  Core",                "R/3.3.3-fasrc01" ]
-      - [ "R/3.3.3-fasrc02  Comp gcc",            "gcc/7.1.0-fasrc01 R/3.3.3-fasrc02" ]
-      - [ "R/3.3.3-fasrc02  Comp intel",          "intel/17.0.4-fasrc01 R/3.3.3-fasrc02" ]
-      - [ "R/3.3.3-fasrc03  MPI  gcc openmpi",    "gcc/7.1.0-fasrc01 openmpi/2.1.0-fasrc02 R/3.3.3-fasrc03" ]
-      - [ "R/3.3.3-fasrc03  MPI  intel openmpi",  "intel/17.0.4-fasrc01  openmpi/2.1.0-fasrc02 R/3.3.3-fasrc03" ]
-      - [ "R/3.4.2-fasrc01  Core",                "R/3.4.2-fasrc01" ]
-      - [ "R/3.4.2-fasrc02  Comp gcc",            "gcc/7.1.0-fasrc01 R/3.4.2-fasrc02" ]
-      - [ "R/3.4.2-fasrc02  Comp intel",          "intel/17.0.4-fasrc01 R/3.4.2-fasrc02" ]
-      - [ "R/3.4.2-fasrc03  MPI  gcc openmpi",    "gcc/7.1.0-fasrc01 openmpi/2.1.0-fasrc02 R/3.4.2-fasrc03" ]
-      - [ "R/3.4.2-fasrc03  MPI  gcc mvapich2",   "gcc/7.1.0-fasrc01 mvapich2/2.3b-fasrc02 R/3.4.2-fasrc03" ]
-      - [ "R/3.4.2-fasrc03  MPI  intel openmpi",  "intel/17.0.4-fasrc01 openmpi/2.1.0-fasrc02 R/3.4.2-fasrc03" ]
-      - [ "R/3.4.2-fasrc03  MPI  intel mvapich2", "intel/17.0.4-fasrc01 mvapich2/2.3b-fasrc02 R/3.4.2-fasrc03" ]
-      - [ "R/3.5.0-fasrc01  Comp gcc",            "gcc/7.1.0-fasrc01 R/3.5.0-fasrc01" ]
-      - [ "R/3.5.0-fasrc01  Comp intel",          "intel/17.0.4-fasrc01 R/3.5.0-fasrc01" ]
-      - [ "R/3.5.0-fasrc02  Comp gcc",            "gcc/7.1.0-fasrc01 R/3.5.0-fasrc02" ]
-      - [ "R/3.5.0-fasrc02  Comp intel",          "intel/17.0.4-fasrc01 R/3.5.0-fasrc02" ]
-      - [ "R/3.5.1-fasrc01  Core",                "R/3.5.1-fasrc01" ]
-      - [ "R/3.5.1-fasrc02  Comp gcc",            "gcc/7.1.0-fasrc01 R/3.5.1-fasrc02" ]
-      - [ "R/3.5.1-fasrc02  Comp intel",          "intel/17.0.4-fasrc01 R/3.5.1-fasrc02" ]
-      - [ "R/3.5.1-fasrc03  MPI  gcc openmpi",    "gcc/7.1.0-fasrc01 openmpi/2.1.0-fasrc02 R/3.5.1-fasrc03" ]
-      - [ "R/3.5.1-fasrc03  MPI  gcc mvapich2",   "gcc/7.1.0-fasrc01 mvapich2/2.3b-fasrc02 R/3.5.1-fasrc03" ]
-      - [ "R/3.5.1-fasrc03  MPI  intel openmpi",  "intel/17.0.4-fasrc01 openmpi/2.1.0-fasrc02 R/3.5.1-fasrc03" ]
-      - [ "R/3.5.1-fasrc03  MPI  intel mvapich2", "intel/17.0.4-fasrc01 mvapich2/2.3b-fasrc02 R/3.5.1-fasrc03" ]
-  rlibs:
-    label: location of your R_LIBS_USER folder
-    widget: text_field
-  rstudio_version:
-    widget: select
-    label: "Rstudio version to display as icon on desktop"
-    help: "This defines the version of Rstudio you want to load."
-    options:
-      - [ "none", "NULL" ]
-      - [ "1.1.453-fasrc01", "rstudio/1.1.453-fasrc01" ]
 
 form:
   - bc_vnc_idle
@@ -113,10 +73,6 @@ form:
   - bc_num_hours
   - custom_time
   - custom_desktop
-  - matlab_version
-  - rstudio_version
-  - r_version
-  - rlibs
   - custom_email_address
   - bc_email_on_started
   - custom_reservation

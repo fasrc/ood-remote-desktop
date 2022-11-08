@@ -1,5 +1,0 @@
-#!/bin/env bash
-
-zenity --info --text  '<span foreground="red" font="18"><b><i>Matlab</i></b> is starting up.\nPlease allow up to a couple of minutes to load.\nThank you for your patience</span>' &
-module load <%= context.matlab_version %>
-$MATLAB_HOME/bin/matlab  -desktop -softwareopengl &
