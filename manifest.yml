@@ -5,7 +5,7 @@ category: Interactive Apps
 subcategory: Desktops
 role: batch_connect
 description: |
-  This app will launch an interactive desktop session on a compute node in a partition of your choice. This app is useful to have graphical user interface (GUI) on the [FAS-RC] cluster.
+  This app will launch an interactive desktop session on a compute node in a partition of your choice. This app is useful to have graphical user interface (GUI) on the [FASSE cluster] -- FAS-RC Secure Cluster.
 
   You can select the amount of RAM (in GB), number of cores, and Timelimit (in hrs).
 
@@ -15,6 +15,6 @@ description: |
 
   See [How to launch software] for how to launch various software, like Abaqus, Comsol, ParaView, etc.
 
-  [FAS-RC]: https://www.rc.fas.harvard.edu/about/cluster-architecture/
+  [FASSE cluster]: https://docs.rc.fas.harvard.edu/kb/fasse/
   [documentation]: https://docs.rc.fas.harvard.edu/kb/vdi-apps/#VDI_Remote_Desktop
   [How to launch software]: https://docs.rc.fas.harvard.edu/kb/ood-remote-desktop-how-to-open-software

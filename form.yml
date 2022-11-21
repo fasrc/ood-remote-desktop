@@ -1,6 +1,6 @@
 ---
 title: "Remote Desktop"
-cluster: "odyssey3"
+cluster: "fasse"
 attributes:
   desktop: "myxfce"
   bc_vnc_idle: 0
@@ -18,12 +18,12 @@ attributes:
     help: |
       *sbatch -t, --time=\<time\>*
   bc_num_hours: null
-  bc_queue: 
+  bc_queue:
     value: "test"
     help: |
       *sbatch -p, --partition=\<partition_names\>*
 
-      [Slurm partition](https://www.rc.fas.harvard.edu/resources/running-jobs/#Slurm_partitions) name (e.g., **shared** ), or comma-separated list of partition names (e.g., **shared,test** )
+      [FASSE partitions](https://docs.rc.fas.harvard.edu/kb/fasse/#SLURM_and_Partitions) name (e.g., **fasse** ), or comma-separated list of partition names (e.g., **fasse,test** )
   custom_email_address:
     label: email for status notification
     widget: text_field
