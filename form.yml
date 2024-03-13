@@ -39,7 +39,6 @@ attributes:
     value: 2
     min:   1
     step:  1
-    max:   64
     widget: number_field
     help: "Number of Cpus to allocate"
   custom_num_gpus:
