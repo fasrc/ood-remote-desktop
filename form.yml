@@ -48,7 +48,7 @@ attributes:
     step:  1
     max:   4
     widget: number_field
-    help: "Number of GPUs to allocate. Available only on GPU enabled partitions"
+    help: "Number of GPUs to allocate. Available only on GPU enabled partitions. Set to 0 for the remoteviz partition."
   custom_reservation:
     label: Reservation
     widget: text_field
