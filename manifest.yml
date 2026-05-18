@@ -15,6 +15,6 @@ description: |
 
   See [How to launch software] for how to launch various software, like Abaqus, Comsol, ParaView, etc.
 
-  [FAS-RC]: https://www.rc.fas.harvard.edu/services/cluster-computing/#Cannon
+  [Cannon]: https://www.rc.fas.harvard.edu/services/cluster-computing/#Cannon
   [documentation]: https://docs.rc.fas.harvard.edu/kb/vdi-apps/
   [How to launch software]: https://docs.rc.fas.harvard.edu/kb/ood-remote-desktop-how-to-open-software
